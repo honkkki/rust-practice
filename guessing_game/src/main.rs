@@ -13,8 +13,10 @@ fn main() {
         io::stdin().read_line(&mut guess).expect("failed to read line");
 
         // string转为uint32 trim()去除字符串空格
-        let guess: u32 = guess.trim().parse()
-            .expect("Please type a number!");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
         println!("you guessed: {}", guess);
 
