@@ -4,13 +4,15 @@ use std::cmp::Ordering;
 
 fn main() {
     println!("Guess the number!");
-    let secret_number = rand::thread_rng().gen_range(1, 101);
+    let secret_number = rand::thread_rng().gen_range(1, 101);    // [)
     println!("The secret number is: {}", secret_number);
 
     loop {
         println!("Please input your guess.");
         let mut guess = String::new();
-        io::stdin().read_line(&mut guess).expect("failed to read line");
+        let n_bytes = io::stdin().read_line(&mut guess)
+            .expect("failed to read line");
+        println!("len of guess is: {}", n_bytes);
 
         // string转为uint32 trim()去除字符串空格
         let guess: u32 = match guess.trim().parse() {
