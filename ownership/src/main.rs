@@ -11,6 +11,11 @@ fn main() {
     let s1 = String::from("get");
     let str1 = take_and_give(s1);
     println!("{}", str1);
+
+    let str = String::from("hello");
+    let s = str;        // move
+    println!("{}", s);
+
 }
 
 fn take_ownership(str: String) {

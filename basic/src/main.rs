@@ -1,3 +1,6 @@
+const MAX_POINTS: u32 = 1000;
+
+
 fn main() {
     let i: i64 = 1;
     println!("{}", i);
@@ -7,6 +10,7 @@ fn main() {
     println!("{}", f);
     println!("{}", a);
     println!("{}", cc);
+    println!("{}", MAX_POINTS);
 
     // while
     let max = 10;
@@ -38,5 +42,57 @@ fn main() {
         if num * num > max {
             break;
         }
+    }
+
+    let t: bool = true;
+    println!("{}", t);
+    println!("--------------------------");
+
+    // tuple
+    let tup: (i32, i64) = (500, 1000);
+    println!("{}, {}", tup.0, tup.1);
+    let (x, y) = tup;
+    println!("{}, {}", x, y);
+    println!("--------------------------");
+
+    // array
+    let arr: [i32; 3] = [1, 2, 3];
+    println!("{}", arr[0]);
+    for elem in arr.iter() {
+        println!("{}", elem)
+    }
+    println!("--------------------------");
+
+    // 控制块
+    let y = {
+        let x = 1;
+        x + 1
+    };
+
+    println!("{}", y);
+    let num = get_num();
+    println!("{}", num);
+
+    let condition = true;
+    let num = if condition {1} else {0};
+    println!("{}", num);
+    println!("--------------------------");
+
+    range_num();
+
+    let mut str = "hello";
+    println!("{}", str);
+    str = "rust";
+    println!("{}", str);
+
+}
+
+fn get_num() -> i32 {
+    6
+}
+
+fn range_num() {
+    for num in 1..6 {       // 1-5
+        println!("{}", num)
     }
 }
