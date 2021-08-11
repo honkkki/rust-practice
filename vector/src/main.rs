@@ -37,5 +37,11 @@ fn main() {
     ];
 
     println!("{:?}", v);
+    println!("--------------------");
+
+    let s = String::from("rust");
+    let mut v = vec!["hello"];
+    v.push(&s);
+    println!("{:?}", v);
 
 }

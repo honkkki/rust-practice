@@ -4,7 +4,13 @@ use std::collections::HashMap;
 fn main() {
     let mut map = HashMap::new();
     let str = String::from("rust");
+    let color = String::from("orange");
+    let color2 = String::from("purple");
+    let hello = String::from("hello");
     map.insert("name", &str);       // 不传引用会导致所有权转移
+    map.insert("color", &color);
+    map.insert("color", &color2);
+    map.entry("name").or_insert(&hello);
 
     println!("{:?}", map);
     println!("{:?}", str);
@@ -18,7 +24,7 @@ fn main() {
     let color = String::from("blue");
     let score = result.get(&color.as_str());
     match score {
-        Some(v) => {println!("blue score: {}", v)},
+        Some(v) => { println!("blue score: {}", v) }
         None => (),
     }
 
@@ -27,5 +33,14 @@ fn main() {
     }
 
     println!("{:?}", result);
+    println!("------------------------------");
 
+    let text = "hello world wonderful world";
+    let mut map = HashMap::new();
+    for word in text.split_whitespace() {
+        let count = map.entry(word).or_insert(0);
+        *count += 1;
+    }
+
+    println!("{:?}", map);
 }
