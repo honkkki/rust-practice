@@ -13,6 +13,12 @@ fn main() {
     s1.push_str(" hello");
     println!("{}", s1);
     println!("{}", s);
+
+
+    let r1 = &mut s;
+    let r2 = &mut s;
+    println!("{} {}", r1, r2);
+
 }
 
 fn calc_len(s: &mut String) -> usize {
