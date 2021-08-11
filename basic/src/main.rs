@@ -58,8 +58,8 @@ fn main() {
     // array
     let arr: [i32; 3] = [1, 2, 3];
     println!("{}", arr[0]);
-    for elem in arr.iter() {
-        println!("{}", elem)
+    for elem in arr {
+        println!("arr: {}", elem)
     }
     println!("--------------------------");
 
