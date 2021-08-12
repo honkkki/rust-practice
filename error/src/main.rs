@@ -52,5 +52,8 @@ fn main() {
 
     let len = file.write(b"test unwrap").expect("write error");
     println!("write bytes: {}", len);
+    println!("------------------------------");
+
+
 
 }
