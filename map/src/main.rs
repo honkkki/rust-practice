@@ -1,16 +1,15 @@
 use std::collections::HashMap;
 
-
 fn main() {
     let mut map = HashMap::new();
     let str = String::from("rust");
     let color = String::from("orange");
     let color2 = String::from("purple");
-    let hello = String::from("hello");
+    let name = String::from("karina");
     map.insert("name", &str);       // 不传引用会导致所有权转移
     map.insert("color", &color);
     map.insert("color", &color2);
-    map.entry("name").or_insert(&hello);
+    map.entry("name").or_insert(&name);
 
     println!("{:?}", map);
     println!("{:?}", str);
