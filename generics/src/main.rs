@@ -13,9 +13,12 @@ impl<T> Point<T> {
 
 
 fn main() {
-    let number_list = vec![34, 50, 25, 100, 65];
+    let number_list = vec![34, 50, 25, 100, 65, 30];
+    let number_list_float = vec![1.1, 2.2, 3.3];
     let num = largest(&number_list);
+    let largest_float = largest(&number_list_float);
     println!("largest num: {}", num);
+    println!("largest float: {}", largest_float);
 
     let p = Point {
         x: 1,

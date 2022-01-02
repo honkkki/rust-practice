@@ -4,6 +4,34 @@ enum Cell {
     String(String),
 }
 
+fn get_largest_num_from_vec(list: &Vec<i32>) -> i32 {
+    let mut res: i32 = list[0];
+    for &num in list.iter() {
+        if num > res {
+            res = num;
+        }
+    }
+
+    res
+}
+
+// 冒泡排序
+fn bubble(list: &mut Vec<i32>) {
+    let mut i = 0;
+    while i < list.len() - 1 {
+        let mut j = i + 1;
+        while j < list.len() {
+            if list[i] > list[j] {
+                let tmp = list[i];
+                list[i] = list[j];
+                list[j] = tmp;
+            }
+            j += 1;
+        }
+        i += 1;
+    }
+}
+
 fn main() {
     let mut v = vec![1, 2, 3];
     println!("{:?}", v);
@@ -43,5 +71,14 @@ fn main() {
     let mut v = vec!["hello"];
     v.push(&s);
     println!("{:?}", v);
+    println!("{}", s);
+    println!("--------------------");
 
+    let mut list = vec![3, 4, 5, 2, 1];
+    let res = get_largest_num_from_vec(&list);
+    println!("{}", res);
+    println!("--------------------");
+
+    bubble(&mut list);
+    println!("{:?}", list)
 }
